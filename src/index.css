@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Hide all web elements during print */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure background colors and images are printed */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* Default state for print-only section - off-screen instead of display:none for better PDF capture */
+.print-only {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  z-index: -100;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    position: static !important;
+    display: block !important;
+    left: 0 !important;
+    z-index: auto !important;
+  }
+}
