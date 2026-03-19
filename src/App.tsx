@@ -288,7 +288,7 @@ export default function App() {
               <Info className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
               <div className="text-xs text-slate-400 leading-relaxed">
                 <p className="font-bold text-indigo-300 uppercase tracking-wider mb-1">Nota Fisiológica:</p>
-                La prueba debe durar <span className="text-slate-200 font-bold">al menos 4 minutos</span> (lo ideal es entre <span className="text-slate-200 font-bold">5 y 6 minutos</span>). El factor fisiológico clave no es la distancia en sí, sino la <span className="text-indigo-400 font-bold italic">duración del estímulo</span>.
+                La prueba debe durar <span className="text-slate-200 font-bold">al menos 4 minutos</span> (lo ideal es entre <span className="text-slate-200 font-bold">5 y 6 minutos</span>). Se debe realizar con un <span className="text-slate-200 font-bold italic">esfuerzo máximo sostenido</span>. El factor fisiológico clave no es la distancia en sí, sino la <span className="text-indigo-400 font-bold italic">duración del estímulo</span>.
               </div>
             </div>
 
