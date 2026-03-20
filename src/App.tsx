@@ -92,7 +92,7 @@ export default function App() {
                 <tr>
                   <td style="border: 0.5pt solid #cccccc; padding: 8px; font-size: 14px; font-weight: bold; font-style: italic;">${zone.name}</td>
                   <td style="border: 0.5pt solid #cccccc; padding: 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; color: #475569;">${zone.description}</td>
-                  <td style="border: 0.5pt solid #cccccc; padding: 8px; font-size: 10px; color: #64748b;">${zone.minPercent}% - ${zone.maxPercent}% VAM</td>
+                  <td style="border: 0.5pt solid #cccccc; padding: 8px; font-size: 10px; color: #64748b;">${zone.minPercent}% - ${zone.maxPercent}% VAM ${zone.name === 'Z4' ? '(VO2MAX)' : ''}</td>
                   <td style="border: 0.5pt solid #cccccc; padding: 8px; font-size: 14px; font-weight: bold; font-style: italic; text-align: right;">
                     ${formatPace(calculatePaceAtPercent(paceVAMSeconds, zone.maxPercent))} - ${formatPace(calculatePaceAtPercent(paceVAMSeconds, zone.minPercent))}
                   </td>
@@ -371,7 +371,7 @@ export default function App() {
                           {zone.description}
                         </h4>
                         <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">
-                          Intensidad: {zone.minPercent}% - {zone.maxPercent}% VAM
+                          Intensidad: {zone.minPercent}% - {zone.maxPercent}% VAM {zone.name === 'Z4' ? '(VO2MAX)' : ''}
                         </p>
                       </div>
                     </div>

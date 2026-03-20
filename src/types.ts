@@ -13,9 +13,9 @@ export interface RacePrediction {
 }
 
 export const ZONES: TrainingZone[] = [
-  { name: 'Z1', description: 'Umbral Aeróbico / LT1', minPercent: 65, maxPercent: 73, color: 'text-emerald-500' },
+  { name: 'Z1', description: 'Umbral Aeróbico / LT1', minPercent: 56, maxPercent: 65, color: 'text-emerald-500' },
   { name: 'Z2', description: 'Ritmo Maratón / MLSS', minPercent: 74, maxPercent: 80, color: 'text-sky-500' },
-  { name: 'Z3', description: 'Umbral Anaeróbico / LT2 / Media Maratón', minPercent: 87, maxPercent: 96, color: 'text-amber-500' },
+  { name: 'Z3', description: 'Umbral Anaeróbico / LT2 / Media Maratón', minPercent: 81, maxPercent: 86, color: 'text-amber-500' },
   { name: 'Z4', description: 'Potencia Aeróbica / VAM', minPercent: 97, maxPercent: 100, color: 'text-rose-500' },
 ];
 
