@@ -504,6 +504,102 @@ export default function App() {
           </div>
         </section>
 
+        {/* VAM Test Protocol */}
+        <section className="relative p-8 md:p-16 rounded-3xl bg-slate-900/40 border border-slate-800/50 overflow-hidden">
+          <div className="absolute bottom-0 left-0 w-1/2 h-full bg-indigo-500/5 blur-[120px] -z-10" />
+          
+          <div className="space-y-12">
+            <div className="max-w-3xl space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold uppercase tracking-widest">
+                Protocolo
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">
+                Protocolo del Test <br />
+                <span className="text-indigo-500">de VAM (5-6 min)</span>
+              </h2>
+              <p className="text-slate-400 font-medium leading-relaxed text-lg">
+                Este protocolo está diseñado para obtener tu Velocidad Aeróbica Máxima de forma precisa. El objetivo es realizar un esfuerzo máximo constante que dure entre 5 y 6 minutos.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 font-black italic">1</div>
+                    <h4 className="text-xl font-black uppercase italic tracking-tight">Consideraciones Previas</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-slate-500">
+                    <li className="leading-relaxed"><strong className="text-slate-300">Estado de Descanso:</strong> Es obligatorio llegar descansado. El día anterior debe ser de descanso total o de un rodaje muy suave (20-30 min) con 2-3 rectas de activación.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Terreno:</strong> El lugar ideal es una pista de atletismo (400m). Si no es posible, utiliza un tramo de asfalto totalmente llano.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Condiciones:</strong> Evita días de mucho viento o calor extremo. La temperatura ideal es entre 10°C y 18°C.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Nutrición:</strong> Realiza una comida ligera rica en hidratos de carbono 2-3 horas antes.</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 font-black italic">2</div>
+                    <h4 className="text-xl font-black uppercase italic tracking-tight">El Calentamiento</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-slate-500">
+                    <li className="leading-relaxed"><strong className="text-slate-300">Rodaje de Activación:</strong> 15 a 20 minutos de carrera continua muy suave (Z1). Debes poder hablar sin dificultad.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Movilidad Dinámica:</strong> 5 minutos de ejercicios de movilidad. No realices estiramientos estáticos prolongados.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Rectas de Progresión:</strong> Realiza 4 a 5 rectas de 80-100 metros. La primera al 60% y la última al 90% de tu velocidad máxima.</li>
+                    <li className="bg-indigo-500/5 p-3 rounded-lg border border-indigo-500/10 italic">Nota: No son "series", son activadores. No deben producir fatiga, solo "chispa".</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 font-black italic">3</div>
+                    <h4 className="text-xl font-black uppercase italic tracking-tight">Ejecución del Test</h4>
+                  </div>
+                  <ul className="space-y-3 text-sm text-slate-500">
+                    <li className="leading-relaxed"><strong className="text-slate-300">La Salida:</strong> No salgas al 100% como si fuera un sprint. Sal al ritmo más alto que creas que puedes mantener durante 5-6 minutos.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Estrategia de Ritmo:</strong> Intenta ser constante durante toda la prueba.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">El "Sprint" Final:</strong> Si al final sientes que puedes acelerar mucho, saliste demasiado lento. Debes terminar "vaciado".</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Registro:</strong> Es vital anotar el tiempo exacto (minutos y segundos) y la distancia recorrida.</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 font-black italic">4</div>
+                    <h4 className="text-xl font-black uppercase italic tracking-tight">Post-Test</h4>
+                  </div>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    No te detengas en seco. Camina 2 minutos y luego realiza un trote muy suave de 10 minutos para ayudar a la resíntesis del lactato acumulado.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 space-y-4">
+                  <h4 className="text-sm font-black uppercase italic tracking-tight text-indigo-400">¿Qué distancia elegir?</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center border-b border-indigo-500/10 pb-2">
+                      <span className="text-xs text-slate-400 uppercase font-bold">Iniciado ({'>'} 5:00 min/km)</span>
+                      <span className="text-sm font-black text-indigo-400 italic">1500m</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-indigo-500/10 pb-2">
+                      <span className="text-xs text-slate-400 uppercase font-bold">Medio (3:45 - 4:45 min/km)</span>
+                      <span className="text-sm font-black text-indigo-400 italic">2000m</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-slate-400 uppercase font-bold">Élite ({'<'} 3:30 min/km)</span>
+                      <span className="text-sm font-black text-indigo-400 italic">3000m</span>
+                    </div>
+                  </div>
+                  <p className="text-center text-[10px] font-bold text-indigo-400/60 uppercase tracking-widest pt-4 border-t border-indigo-500/10">
+                    Repite el protocolo para comparar resultados en el tiempo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Hydration CTA Section */}
         <section className="relative py-24 px-6 overflow-hidden">
           <div className="absolute inset-0 bg-indigo-600/5" />
