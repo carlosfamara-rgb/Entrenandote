@@ -265,7 +265,7 @@ export default function App() {
                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Nombre del Atleta</label>
                 <input 
                   type="text" 
-                  placeholder="Ej: Carlos Famara"
+                  placeholder="Ej: Carlos"
                   value={athleteName}
                   onChange={(e) => setAthleteName(e.target.value)}
                   className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder:text-slate-600"
