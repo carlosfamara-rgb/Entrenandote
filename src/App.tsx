@@ -28,8 +28,8 @@ export default function App() {
 
   // Test Calculator State
   const [testDistance, setTestDistance] = useState<number>(2000);
-  const [testMinutes, setTestMinutes] = useState<number>(7);
-  const [testSeconds, setTestSeconds] = useState<number>(30);
+  const [testMinutes, setTestMinutes] = useState<string>('7');
+  const [testSeconds, setTestSeconds] = useState<string>('30');
   const [athleteName, setAthleteName] = useState<string>('');
 
   const handleDownloadPDF = async () => {
@@ -88,7 +88,7 @@ export default function App() {
               </div>
               <div>
                 <p style="margin: 0 !important; font-size: 9px !important; font-weight: 700 !important; color: #94A3B8 !important; text-transform: uppercase !important;">Tiempo Total</p>
-                <p style="margin: 2px 0 0 0 !important; font-size: 20px !important; font-weight: 900 !important; font-style: italic !important;">${testMinutes}:${testSeconds.toString().padStart(2, '0')} <span style="font-size: 10px !important; font-weight: 600 !important; color: #94A3B8 !important; font-style: normal !important;">min</span></p>
+                <p style="margin: 2px 0 0 0 !important; font-size: 20px !important; font-weight: 900 !important; font-style: italic !important;">${testMinutes || '0'}:${(testSeconds || '0').toString().padStart(2, '0')} <span style="font-size: 10px !important; font-weight: 600 !important; color: #94A3B8 !important; font-style: normal !important;">min</span></p>
               </div>
             </div>
           </div>
@@ -182,7 +182,7 @@ export default function App() {
   };
 
   const applyTestResult = () => {
-    const calculatedVAM = calculateVAMFromTest(testDistance, testMinutes, testSeconds);
+    const calculatedVAM = calculateVAMFromTest(testDistance, parseInt(testMinutes) || 0, parseInt(testSeconds) || 0);
     if (calculatedVAM > 0) {
       setVamSpeed(parseFloat(calculatedVAM.toFixed(2)));
       setPaceVAMSeconds(speedToPaceSeconds(calculatedVAM));
@@ -290,7 +290,12 @@ export default function App() {
                 <input 
                   type="number" 
                   value={testMinutes}
-                  onChange={(e) => setTestMinutes(parseInt(e.target.value) || 0)}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    // Strip leading zeros if more than one digit
+                    const normalized = val.replace(/^0+(?!$)/, '');
+                    setTestMinutes(normalized);
+                  }}
                   className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                 />
               </div>
@@ -300,7 +305,12 @@ export default function App() {
                 <input 
                   type="number" 
                   value={testSeconds}
-                  onChange={(e) => setTestSeconds(parseInt(e.target.value) || 0)}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    // Strip leading zeros if more than one digit
+                    const normalized = val.replace(/^0+(?!$)/, '');
+                    setTestSeconds(normalized);
+                  }}
                   className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                 />
               </div>
