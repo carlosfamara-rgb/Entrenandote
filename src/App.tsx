@@ -291,10 +291,15 @@ export default function App() {
                   type="number" 
                   value={testMinutes}
                   onChange={(e) => {
-                    const val = e.target.value;
-                    // Strip leading zeros if more than one digit
-                    const normalized = val.replace(/^0+(?!$)/, '');
-                    setTestMinutes(normalized);
+                    let val = e.target.value;
+                    // Allow leading zero for 2-digit numbers (e.g., "05")
+                    // Strip leading zeros if more than 2 digits and starts with 0
+                    if (val.length > 2 && val.startsWith('0')) {
+                      val = val.replace(/^0+(?!$)/, '');
+                    }
+                    // Prevent "00"
+                    if (val === '00') val = '0';
+                    setTestMinutes(val);
                   }}
                   className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                 />
@@ -306,10 +311,15 @@ export default function App() {
                   type="number" 
                   value={testSeconds}
                   onChange={(e) => {
-                    const val = e.target.value;
-                    // Strip leading zeros if more than one digit
-                    const normalized = val.replace(/^0+(?!$)/, '');
-                    setTestSeconds(normalized);
+                    let val = e.target.value;
+                    // Allow leading zero for 2-digit numbers (e.g., "05")
+                    // Strip leading zeros if more than 2 digits and starts with 0
+                    if (val.length > 2 && val.startsWith('0')) {
+                      val = val.replace(/^0+(?!$)/, '');
+                    }
+                    // Prevent "00"
+                    if (val === '00') val = '0';
+                    setTestSeconds(val);
                   }}
                   className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                 />

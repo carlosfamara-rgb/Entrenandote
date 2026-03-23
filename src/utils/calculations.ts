@@ -11,8 +11,9 @@ export function speedToPaceSeconds(speedKmH: number): number {
  */
 export function formatPace(secondsPerKm: number): string {
   if (secondsPerKm <= 0) return '00:00';
-  const minutes = Math.floor(secondsPerKm / 60);
-  const seconds = Math.round(secondsPerKm % 60);
+  const roundedTotalSeconds = Math.round(secondsPerKm);
+  const minutes = Math.floor(roundedTotalSeconds / 60);
+  const seconds = roundedTotalSeconds % 60;
   return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
@@ -21,9 +22,10 @@ export function formatPace(secondsPerKm: number): string {
  */
 export function formatTotalTime(totalSeconds: number): string {
   if (totalSeconds <= 0) return '00:00';
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = Math.round(totalSeconds % 60);
+  const roundedTotalSeconds = Math.round(totalSeconds);
+  const hours = Math.floor(roundedTotalSeconds / 3600);
+  const minutes = Math.floor((roundedTotalSeconds % 3600) / 60);
+  const seconds = roundedTotalSeconds % 60;
 
   if (hours > 0) {
     return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
