@@ -637,7 +637,7 @@ export default function App() {
               </div>
               <div className="flex-1 space-y-4">
                 <h3 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter text-lime-400">
-                  ¿Quieres rendir mejor?
+                  ¿Quieres rendir más?
                 </h3>
                 <p className="text-slate-400 font-medium leading-relaxed">
                   Calcula tu <span className="text-slate-200">tasa de sudoración</span> y ajusta tu hidratación de forma científica para evitar la deshidratación y maximizar tu rendimiento deportivo.
