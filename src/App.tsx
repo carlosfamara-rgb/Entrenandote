@@ -38,11 +38,11 @@ export default function App() {
 
     // Generate HTML string with elite sports performance design (Refined, Single Page, No Black Backgrounds)
     const pdfHtml = `
-      <div style="width: 720px; min-height: 1000px; padding: 30px; background-color: #F8FAFC !important; color: #0F172A !important; font-family: 'Inter', -apple-system, sans-serif !important; box-sizing: border-box !important; position: relative !important;">
+      <div style="width: 720px; padding: 25px; background-color: #F8FAFC !important; color: #0F172A !important; font-family: 'Inter', -apple-system, sans-serif !important; box-sizing: border-box !important; position: relative !important;">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
         
         <!-- Header Section -->
-        <div style="display: flex !important; justify-content: space-between !important; align-items: flex-start !important; margin-bottom: 30px !important; border-bottom: 4px solid #0047AB !important; padding-bottom: 20px !important;">
+        <div style="display: flex !important; justify-content: space-between !important; align-items: flex-start !important; margin-bottom: 20px !important; border-bottom: 4px solid #0047AB !important; padding-bottom: 15px !important;">
           <div style="flex: 1 !important;">
             <h1 style="margin: 0 !important; font-family: 'Oswald', sans-serif !important; font-size: 32px !important; font-weight: 700 !important; font-style: italic !important; text-transform: uppercase !important; color: #0047AB !important; letter-spacing: -1.5px !important; line-height: 1 !important;">ENTRENANDOTE.ES</h1>
             <p style="margin: 4px 0 0 0 !important; font-size: 10px !important; font-weight: 700 !important; color: #64748B !important; text-transform: uppercase !important; letter-spacing: 3px !important;">FISIOLOGÍA DEL ENTRENAMIENTO</p>
@@ -54,7 +54,7 @@ export default function App() {
         </div>
 
         <!-- Athlete Info Bar -->
-        <div style="display: flex !important; justify-content: space-between !important; align-items: center !important; margin-bottom: 25px !important; background-color: #FFFFFF !important; padding: 12px 20px !important; border-radius: 12px !important; border: 1px solid #E2E8F0 !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;">
+        <div style="display: flex !important; justify-content: space-between !important; align-items: center !important; margin-bottom: 15px !important; background-color: #FFFFFF !important; padding: 10px 20px !important; border-radius: 12px !important; border: 1px solid #E2E8F0 !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;">
           <div>
             <span style="font-size: 9px !important; font-weight: 700 !important; color: #94A3B8 !important; text-transform: uppercase !important; letter-spacing: 1px !important; display: block !important; margin-bottom: 2px !important;">ATLETA EVALUADO</span>
             <span style="font-size: 14px !important; font-weight: 900 !important; color: #0F172A !important; text-transform: uppercase !important;">${athleteName || 'PENDIENTE DE REGISTRO'}</span>
@@ -66,9 +66,9 @@ export default function App() {
         </div>
 
         <!-- Card 1: VAM Summary (Scoreboard Style) -->
-        <div style="margin-bottom: 30px !important;">
+        <div style="margin-bottom: 20px !important;">
           <div style="background-color: #FFFFFF !important; border-radius: 16px !important; border: 1px solid #E2E8F0 !important; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important; overflow: hidden !important; display: flex !important;">
-            <div style="background-color: #0047AB !important; padding: 30px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; min-width: 220px !important;">
+            <div style="background-color: #0047AB !important; padding: 20px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; min-width: 180px !important;">
               <span style="font-size: 10px !important; font-weight: 700 !important; color: #FFFFFF !important; text-transform: uppercase !important; letter-spacing: 2px !important; margin-bottom: 5px !important; opacity: 0.8 !important;">VELOCIDAD VAM</span>
               <div style="display: flex !important; align-items: baseline !important; gap: 5px !important;">
                 <span style="font-size: 64px !important; font-weight: 900 !important; color: #FFFFFF !important; font-style: italic !important; line-height: 1 !important;">${vamSpeed.toFixed(1)}</span>
@@ -77,7 +77,7 @@ export default function App() {
               <div style="margin-top: 15px !important; background-color: transparent !important; color: transparent !important; font-size: 10px !important; font-weight: 900 !important; padding: 4px 12px !important; border-radius: 20px !important; text-transform: uppercase !important; letter-spacing: 1px !important;">&nbsp;</div>
             </div>
             
-            <div style="flex: 1 !important; padding: 30px !important; display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 20px !important; align-content: center !important;">
+            <div style="flex: 1 !important; padding: 20px !important; display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 15px !important; align-content: center !important;">
               <div style="border-right: 1px solid #F1F5F9 !important; padding-right: 10px !important;">
                 <p style="margin: 0 !important; font-size: 9px !important; font-weight: 700 !important; color: #94A3B8 !important; text-transform: uppercase !important;">Ritmo Objetivo VAM</p>
                 <p style="margin: 2px 0 0 0 !important; font-size: 20px !important; font-weight: 900 !important; font-style: italic !important; color: #0047AB !important;">${formatPace(paceVAMSeconds)} <span style="font-size: 10px !important; font-weight: 600 !important; color: #94A3B8 !important; font-style: normal !important;">min/km</span></p>
@@ -95,22 +95,22 @@ export default function App() {
         </div>
 
         <!-- Card 2: Training Zones -->
-        <div style="margin-bottom: 30px !important;">
-          <h3 style="font-family: 'Oswald', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; text-transform: uppercase !important; color: #0F172A !important; margin-bottom: 15px !important; display: flex !important; align-items: center !important; gap: 10px !important;">
+        <div style="margin-bottom: 20px !important;">
+          <h3 style="font-family: 'Oswald', sans-serif !important; font-size: 14px !important; font-weight: 700 !important; text-transform: uppercase !important; color: #0F172A !important; margin-bottom: 10px !important; display: flex !important; align-items: center !important; gap: 10px !important;">
             <span style="width: 4px !important; height: 18px !important; background-color: #0047AB !important; display: inline-block !important;"></span>
             ZONAS DE ENTRENAMIENTO PERSONALIZADAS
           </h3>
           
-          <div style="display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 12px !important;">
+          <div style="display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px !important;">
             ${ZONES.map(zone => {
               const minPace = calculatePaceAtPercent(paceVAMSeconds, zone.maxPercent);
               const maxPace = calculatePaceAtPercent(paceVAMSeconds, zone.minPercent);
               return `
-                <div style="background-color: #FFFFFF !important; border-radius: 12px !important; border: 1px solid #E2E8F0 !important; padding: 15px !important; display: flex !important; align-items: center !important; gap: 15px !important; box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;">
-                  <div style="font-size: 28px !important; font-weight: 900 !important; font-style: italic !important; color: #0047AB !important; line-height: 1 !important; min-width: 40px !important;">${zone.name}</div>
+                <div style="background-color: #FFFFFF !important; border-radius: 12px !important; border: 1px solid #E2E8F0 !important; padding: 12px !important; display: flex !important; align-items: center !important; gap: 12px !important; box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;">
+                  <div style="font-size: 24px !important; font-weight: 900 !important; font-style: italic !important; color: #0047AB !important; line-height: 1 !important; min-width: 35px !important;">${zone.name}</div>
                   <div style="flex: 1 !important;">
-                    <h4 style="margin: 0 !important; font-size: 11px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #1E293B !important;">${zone.description}</h4>
-                    <p style="margin: 2px 0 0 0 !important; font-size: 16px !important; font-weight: 900 !important; font-style: italic !important; color: #0F172A !important;">${formatPace(minPace)} - ${formatPace(maxPace)}</p>
+                    <h4 style="margin: 0 !important; font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #1E293B !important;">${zone.description}</h4>
+                    <p style="margin: 2px 0 0 0 !important; font-size: 14px !important; font-weight: 900 !important; font-style: italic !important; color: #0F172A !important;">${formatPace(minPace)} - ${formatPace(maxPace)}</p>
                     <p style="margin: 1px 0 0 0 !important; font-size: 8px !important; font-weight: 600 !important; color: #64748B !important; text-transform: uppercase !important;">${zone.minPercent}% - ${zone.maxPercent}% VAM</p>
                   </div>
                 </div>
@@ -120,8 +120,8 @@ export default function App() {
         </div>
 
         <!-- Card 3: Predictions -->
-        <div style="margin-bottom: 30px !important;">
-          <h3 style="font-family: 'Oswald', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; text-transform: uppercase !important; color: #0F172A !important; margin-bottom: 15px !important; display: flex !important; align-items: center !important; gap: 10px !important;">
+        <div style="margin-bottom: 20px !important;">
+          <h3 style="font-family: 'Oswald', sans-serif !important; font-size: 14px !important; font-weight: 700 !important; text-transform: uppercase !important; color: #0F172A !important; margin-bottom: 10px !important; display: flex !important; align-items: center !important; gap: 10px !important;">
             <span style="width: 4px !important; height: 18px !important; background-color: #0047AB !important; display: inline-block !important;"></span>
             PREDICCIONES DE COMPETICIÓN
           </h3>
@@ -130,10 +130,10 @@ export default function App() {
             <table style="width: 100% !important; border-collapse: collapse !important;">
               <thead>
                 <tr style="background-color: #F8FAFC !important; border-bottom: 2px solid #E2E8F0 !important;">
-                  <th style="padding: 12px 20px !important; text-align: left !important; font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Distancia</th>
-                  <th style="padding: 12px 20px !important; text-align: left !important; font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Intensidad</th>
-                  <th style="padding: 12px 20px !important; text-align: left !important; font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Ritmo</th>
-                  <th style="padding: 12px 20px !important; text-align: right !important; font-size: 10px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Tiempo Meta</th>
+                  <th style="padding: 10px 15px !important; text-align: left !important; font-size: 9px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Distancia</th>
+                  <th style="padding: 10px 15px !important; text-align: left !important; font-size: 9px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Intensidad</th>
+                  <th style="padding: 10px 15px !important; text-align: left !important; font-size: 9px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Ritmo</th>
+                  <th style="padding: 10px 15px !important; text-align: right !important; font-size: 9px !important; font-weight: 800 !important; text-transform: uppercase !important; color: #64748B !important; letter-spacing: 1px !important;">Tiempo Meta</th>
                 </tr>
               </thead>
               <tbody>
@@ -143,10 +143,10 @@ export default function App() {
                   const isMarathon = prediction.name.toLowerCase().includes('maratón') && !prediction.name.toLowerCase().includes('media');
                   return `
                     <tr style="border-bottom: 1px solid #F1F5F9 !important; background-color: ${index % 2 === 0 ? '#FFFFFF' : '#FAFBFC'} !important;">
-                      <td style="padding: 12px 20px !important; font-size: 12px !important; font-weight: 800 !important; font-style: italic !important; color: #0F172A !important;">${prediction.name}</td>
-                      <td style="padding: 12px 20px !important; font-size: 11px !important; color: #64748B !important; font-weight: 700 !important;">${prediction.percentVAM}% VAM</td>
-                      <td style="padding: 12px 20px !important; font-size: 12px !important; font-weight: 700 !important; color: #0F172A !important;">${formatPace(pace)}</td>
-                      <td style="padding: 12px 20px !important; font-size: 14px !important; font-weight: 900 !important; font-style: italic !important; text-align: right !important; color: ${isMarathon ? '#0047AB' : '#0F172A'} !important;">${formatTotalTime(totalTime)}</td>
+                      <td style="padding: 8px 15px !important; font-size: 11px !important; font-weight: 800 !important; font-style: italic !important; color: #0F172A !important;">${prediction.name}</td>
+                      <td style="padding: 8px 15px !important; font-size: 10px !important; color: #64748B !important; font-weight: 700 !important;">${prediction.percentVAM}% VAM</td>
+                      <td style="padding: 8px 15px !important; font-size: 11px !important; font-weight: 700 !important; color: #0F172A !important;">${formatPace(pace)}</td>
+                      <td style="padding: 8px 15px !important; font-size: 12px !important; font-weight: 900 !important; font-style: italic !important; text-align: right !important; color: ${isMarathon ? '#0047AB' : '#0F172A'} !important;">${formatTotalTime(totalTime)}</td>
                     </tr>
                   `;
                 }).join('')}
@@ -155,12 +155,20 @@ export default function App() {
           </div>
         </div>
 
+        <!-- PDF Footer -->
+        <div style="margin-top: 20px !important; padding-top: 15px !important; border-top: 1px solid #E2E8F0 !important; text-align: center !important;">
+          <p style="margin: 0 !important; font-size: 10px !important; font-weight: 700 !important; color: #64748B !important; text-transform: uppercase !important; letter-spacing: 1px !important;">
+            Calcula tu tasa de sudoración para rendir más: <span style="color: #0047AB !important;">www.tasadesudoracion.com</span>
+          </p>
+        </div>
+
       </div>
     `;
 
     const opt = {
       margin: 10,
       filename: `Reporte_VAM_${athleteName || 'Atleta'}.pdf`,
+      pagebreak: { mode: 'avoid-all' },
       image: { type: 'jpeg' as const, quality: 0.98 },
       html2canvas: { 
         scale: 2, 
@@ -268,7 +276,7 @@ export default function App() {
                   placeholder="Ej: Carlos"
                   value={athleteName}
                   onChange={(e) => setAthleteName(e.target.value)}
-                  className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder:text-slate-600"
+                  className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder:text-slate-600"
                 />
               </div>
 
