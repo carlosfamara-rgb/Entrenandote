@@ -253,7 +253,7 @@ export default function App() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-lime-400">Tus Umbrales</span>
             </motion.h2>
             <p className="text-slate-400 max-w-2xl text-lg font-medium">
-              Calcula tu <span className="text-indigo-400 font-bold">Velocidad Aeróbica Máxima (VAM)</span> y define tus zonas de entrenamiento con precisión científica. Realiza un <span className="text-white font-bold">esfuerzo máximo sostenido durante 5 minutos</span>, manteniendo el ritmo más alto posible de forma constante. Al finalizar, registra la distancia recorrida.
+              Calcula tu <span className="text-indigo-400 font-bold">Velocidad Aeróbica Máxima (VAM)</span> y define tus zonas de entrenamiento con precisión. Realiza un <span className="text-white font-bold">esfuerzo máximo sostenido durante 5 minutos</span>, manteniendo el ritmo más alto posible de forma constante. Al finalizar, registra la distancia recorrida.
             </p>
           </div>
         </section>
@@ -546,7 +546,7 @@ export default function App() {
               <div className="space-y-3">
                 <h4 className="text-sm font-black uppercase italic tracking-tight text-indigo-400">Predicción de Marca</h4>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  El 80% de la VAM representa el ritmo objetivo ideal para un maratonista bien preparado, maximizando la eficiencia lipídica.
+                  El 80% de la VAM representa el ritmo objetivo ideal para un maratonista bien preparado.
                 </p>
               </div>
 
