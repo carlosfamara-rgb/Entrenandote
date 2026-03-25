@@ -27,7 +27,7 @@ export default function App() {
   const [paceVAMSeconds, setPaceVAMSeconds] = useState<number>(240); // Default 4:00 min/km
 
   // Test Calculator State
-  const [testDistance, setTestDistance] = useState<number>(2000);
+  const [testDistance, setTestDistance] = useState<string>('2000');
   const [testMinutes, setTestMinutes] = useState<string>('7');
   const [testSeconds, setTestSeconds] = useState<string>('30');
   const [athleteName, setAthleteName] = useState<string>('');
@@ -182,7 +182,7 @@ export default function App() {
   };
 
   const applyTestResult = () => {
-    const calculatedVAM = calculateVAMFromTest(testDistance, parseInt(testMinutes) || 0, parseInt(testSeconds) || 0);
+    const calculatedVAM = calculateVAMFromTest(parseFloat(testDistance) || 0, parseInt(testMinutes) || 0, parseInt(testSeconds) || 0);
     if (calculatedVAM > 0) {
       setVamSpeed(parseFloat(calculatedVAM.toFixed(2)));
       setPaceVAMSeconds(speedToPaceSeconds(calculatedVAM));
@@ -245,7 +245,7 @@ export default function App() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-lime-400">Tus Umbrales</span>
             </motion.h2>
             <p className="text-slate-400 max-w-2xl text-lg font-medium">
-              Calcula tu Velocidad Aeróbica Máxima (VAM) y optimiza tus zonas de entrenamiento con precisión científica.
+              Calcula tu <span className="text-indigo-400 font-bold">Velocidad Aeróbica Máxima (VAM)</span> y define tus zonas de entrenamiento con precisión científica. Realiza un <span className="text-white font-bold">esfuerzo máximo sostenido durante 5 minutos</span>, manteniendo el ritmo más alto posible de forma constante. Al finalizar, registra la distancia recorrida.
             </p>
           </div>
         </section>
@@ -273,16 +273,15 @@ export default function App() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Distancia</label>
-                <select 
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Distancia (Metros)</label>
+                <input 
+                  type="number" 
+                  step="0.01"
                   value={testDistance}
-                  onChange={(e) => setTestDistance(parseInt(e.target.value))}
-                  className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
-                >
-                  <option value={1500}>Atleta Iniciado / Jóvenes (1500 M)</option>
-                  <option value={2000}>Atleta de Nivel Medio (2000 M)</option>
-                  <option value={3000}>Atleta de Alto Rendimiento (3000 M)</option>
-                </select>
+                  onChange={(e) => setTestDistance(e.target.value)}
+                  placeholder="Ej: 1500.50"
+                  className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-lg font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all placeholder:text-slate-600"
+                />
               </div>
 
               <div className="space-y-2">
@@ -335,9 +334,9 @@ export default function App() {
 
             <div className="mt-6 p-4 rounded-xl bg-indigo-500/5 border border-indigo-500/10 flex gap-3">
               <Info className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-              <div className="text-xs text-slate-400 leading-relaxed">
+              <div className="text-xs text-white leading-relaxed">
                 <p className="font-bold text-indigo-300 uppercase tracking-wider mb-1">Nota Fisiológica:</p>
-                La prueba debe durar <span className="text-slate-200 font-bold">al menos 4 minutos</span> (lo ideal es entre <span className="text-slate-200 font-bold">5 y 6 minutos</span>). Se debe realizar con un <span className="text-slate-200 font-bold italic">esfuerzo máximo sostenido</span>. El factor fisiológico clave no es la distancia en sí, sino la <span className="text-indigo-400 font-bold italic">duración del estímulo</span>.
+                Para tener fiabilidad en el test la prueba debe durar al menos 4 minutos. Lo ideal es entre 5 y 6 minutos. Se debe realizar con un esfuerzo máximo sostenido. El factor fisiológico clave no es la distancia en sí, sino la duración del estímulo.
               </div>
             </div>
 
@@ -579,7 +578,7 @@ export default function App() {
                     <h4 className="text-xl font-black uppercase italic tracking-tight">Consideraciones Previas</h4>
                   </div>
                   <ul className="space-y-3 text-sm text-slate-500">
-                    <li className="leading-relaxed"><strong className="text-slate-300">Estado de Descanso:</strong> Es obligatorio llegar descansado. El día anterior debe ser de descanso total o de un rodaje muy suave (20-30 min) con 2-3 rectas de activación.</li>
+                    <li className="leading-relaxed"><strong className="text-slate-300">Estado de Descanso:</strong> Es obligatorio llegar descansado. El día anterior debe ser de descanso total o de un rodaje muy suave.</li>
                     <li className="leading-relaxed"><strong className="text-slate-300">Terreno:</strong> El lugar ideal es una pista de atletismo (400m). Si no es posible, utiliza un tramo de asfalto totalmente llano.</li>
                     <li className="leading-relaxed"><strong className="text-slate-300">Condiciones:</strong> Evita días de mucho viento o calor extremo. La temperatura ideal es entre 10°C y 18°C.</li>
                     <li className="leading-relaxed"><strong className="text-slate-300">Nutrición:</strong> Realiza una comida ligera rica en hidratos de carbono 2-3 horas antes.</li>
@@ -621,27 +620,6 @@ export default function App() {
                   </div>
                   <p className="text-sm text-slate-500 leading-relaxed">
                     No te detengas en seco. Camina 2 minutos y luego realiza un trote muy suave de 10 minutos para ayudar a la resíntesis del lactato acumulado.
-                  </p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 space-y-4">
-                  <h4 className="text-sm font-black uppercase italic tracking-tight text-indigo-400">¿Qué distancia elegir?</h4>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center border-b border-indigo-500/10 pb-2">
-                      <span className="text-xs text-slate-400 uppercase font-bold">Iniciado ({'>'} 5:00 min/km)</span>
-                      <span className="text-sm font-black text-indigo-400 italic">1500m</span>
-                    </div>
-                    <div className="flex justify-between items-center border-b border-indigo-500/10 pb-2">
-                      <span className="text-xs text-slate-400 uppercase font-bold">Medio (3:45 - 4:45 min/km)</span>
-                      <span className="text-sm font-black text-indigo-400 italic">2000m</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs text-slate-400 uppercase font-bold">Élite ({'<'} 3:30 min/km)</span>
-                      <span className="text-sm font-black text-indigo-400 italic">3000m</span>
-                    </div>
-                  </div>
-                  <p className="text-center text-[10px] font-bold text-indigo-400/60 uppercase tracking-widest pt-4 border-t border-indigo-500/10">
-                    Repite el protocolo para comparar resultados en el tiempo.
                   </p>
                 </div>
               </div>
