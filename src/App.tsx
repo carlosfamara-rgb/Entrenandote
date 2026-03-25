@@ -218,7 +218,7 @@ export default function App() {
               href="https://tasadesudoracion.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-[10px] font-black uppercase italic tracking-widest text-slate-500 hover:text-indigo-400 transition-colors border-r border-slate-800 pr-8"
+              className="flex items-center gap-2 text-[10px] font-black uppercase italic tracking-widest text-lime-400 hover:text-lime-300 transition-colors border-r border-slate-800 pr-8"
             >
               <Droplets className="w-3.5 h-3.5" />
               Tasa de Sudoración
@@ -566,7 +566,7 @@ export default function App() {
                 <span className="text-indigo-500">de VAM (5-6 min)</span>
               </h2>
               <p className="text-slate-400 font-medium leading-relaxed text-lg">
-                Este protocolo está diseñado para obtener tu Velocidad Aeróbica Máxima de forma precisa. El objetivo es realizar un esfuerzo máximo constante que dure entre 5 y 6 minutos.
+                Este protocolo está diseñado para obtener tu Velocidad Aeróbica Máxima de la forma más precisa. El objetivo es realizar un esfuerzo máximo constante que dure entre 5 y 6 minutos.
               </p>
             </div>
 
@@ -636,8 +636,8 @@ export default function App() {
                 <Droplets className="w-12 h-12 text-indigo-400" />
               </div>
               <div className="flex-1 space-y-4">
-                <h3 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter">
-                  ¿Quieres rendir <span className="text-indigo-400">mejor</span>?
+                <h3 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter text-lime-400">
+                  ¿Quieres rendir mejor?
                 </h3>
                 <p className="text-slate-400 font-medium leading-relaxed">
                   Calcula tu <span className="text-slate-200">tasa de sudoración</span> y ajusta tu hidratación de forma científica para evitar la deshidratación y maximizar tu rendimiento deportivo.
