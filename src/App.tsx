@@ -253,7 +253,7 @@ export default function App() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-lime-400">Tus Umbrales</span>
             </motion.h2>
             <p className="text-slate-400 max-w-2xl text-lg font-medium">
-              Calcula tu <span className="text-indigo-400 font-bold">Velocidad Aeróbica Máxima (VAM)</span> y define tus zonas de entrenamiento con precisión. Realiza un <span className="text-white font-bold">esfuerzo máximo sostenido durante 5 minutos</span>, manteniendo el ritmo más alto posible de forma constante. Al finalizar, registra la distancia recorrida.
+              Calcula tu <span className="text-indigo-400 font-bold">Velocidad Aeróbica Máxima (VAM)</span> y define tus zonas de entrenamiento con precisión. Realiza un <span className="text-white font-bold">esfuerzo máximo sostenido durante 5 minutos*</span>, manteniendo el ritmo más alto posible de forma constante. Al finalizar, registra la distancia recorrida. <span className="text-xs opacity-50 italic block mt-2">*José López Chicharro, 2014</span>
             </p>
           </div>
         </section>
